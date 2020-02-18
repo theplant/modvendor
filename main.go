@@ -82,9 +82,12 @@ func main() {
 			}
 			// Handle "replace" in module file if any
 			if len(s) > 3 && s[3] == "=>" {
-				mod.SourcePath = s[4]
-				mod.SourceVersion = s[5]
-				mod.Dir = pkgModPath(mod.SourcePath, mod.SourceVersion)
+				continue
+				//mod.SourcePath = s[4]
+				//if len(s) > 5 {
+				//	mod.SourceVersion = s[5]
+				//}
+				//mod.Dir = pkgModPath(mod.SourcePath, mod.SourceVersion)
 			} else {
 				mod.Dir = pkgModPath(mod.ImportPath, mod.Version)
 			}
