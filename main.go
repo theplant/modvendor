@@ -68,7 +68,9 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		if line[0] == 35 {
+		// # a b
+		// 12345
+		if len(line) >= 5 && line[0] == 35 && line[1] != 35 {
 			s := strings.Split(line, " ")
 
 			mod = &Mod{
